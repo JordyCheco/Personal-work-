@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import { reactive } from 'vue';
-import Activity from '../components/Activity/Activity.vue';
 
     const items = [
         { name: 'Chest press', reps: 10 },
@@ -22,9 +21,7 @@ import Activity from '../components/Activity/Activity.vue';
         { name: 'Leg raises', reps: 10  }, 
         { name: 'Pull-ups' , reps: 10 },
         { name: 'Dips' , reps: 10 },
-        { name: 'Bent over rows', reps: 10  },
-        { name: 'Barbell rows' , reps: 10 },
-        { name: 'Barbell shrugs' , reps: 10 },
+        { name: 'Bent over rows', reps: 10  }
     ]
 
     const cart = reactive( [
@@ -39,7 +36,8 @@ import Activity from '../components/Activity/Activity.vue';
 </script>
 
 <template>
-  <div class="about">
+    
+  <div class="about box">
     <h1 class="title">Workouts</h1>
 
     <ul>
@@ -71,7 +69,6 @@ import Activity from '../components/Activity/Activity.vue';
     </table>
 
   </div>
-  <Activity />
 </template>
 
 <style lang="scss">

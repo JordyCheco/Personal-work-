@@ -1,8 +1,6 @@
 <script setup lang="ts">
     import { ref } from 'vue';
     import { RouterLink } from 'vue-router';
-    import LoginBadge from './LoginBadge.vue';
-
     let isActive = ref(false);
 
 </script>
@@ -28,16 +26,19 @@
             <router-link to="/" class="navbar-item">
               Home
             </router-link>
-      
             <router-link class="navbar-item" to="/workouts">
               Workouts
+            </router-link>
+            <router-link class="navbar-item" to="/login">
+              Login
+            </router-link>
+            <router-link class="navbar-item" to="/signup">
+              Signup
             </router-link>
           </div>
       
           <div class="navbar-end">
             <div class="navbar-item">
-
-              <login-badge></login-badge>
             </div>
           </div>
         </div>
