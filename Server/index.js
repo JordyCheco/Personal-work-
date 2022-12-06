@@ -20,9 +20,7 @@ app.use('/', express.static('./client/dist'));
 
 app.use(express.json());
 app.use('/api/v1/users', user_controller);
-// .use('/api/v1/WorkoutView', WorkoutViewController)
-// .use('/api/v1/cart', cartController)
-// .use('/api/v1/checkout', checkoutController)
+
 
 app.get('*', (req, res) => {
     
