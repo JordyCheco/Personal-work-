@@ -35,6 +35,9 @@
             <router-link class="navbar-item" to="/signup">
               Signup
             </router-link>
+            <router-link class="navbar-item" to="/community">
+              Community
+            </router-link>
           </div>
       
           <div class="navbar-end">

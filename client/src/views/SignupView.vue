@@ -1,23 +1,22 @@
 <template>
     <div class="container">
-      <form @submit.prevent="register">
-        <h2 class="mb-3">Register</h2>
+      <form @submit.prevent="signup" class="box">
         <div class="input">
-          <label for="email">Email address</label>
+          <label for="email" class="label">Email</label>
           <input
-            class="form-control"
-            type="text"
+            class=" input form-control"
+            type="email"
             name="email"
-            placeholder="Generated@gmail.com"
+            placeholder="e.g. alex@example.com"
           />
         </div>
         <div class="input">
-          <label for="password">Password</label>
+          <label for="password" class="label">Password</label>
           <input
-            class="form-control"
+            class=" input form-control"
             type="password"
             name="password"
-            placeholder="kiki34"
+            placeholder="********"
           />
         </div>
   
@@ -25,8 +24,8 @@
           Have an account? <span @click="moveToLogin">Login</span>
         </div>
   
-        <button type="submit" id="register_button" class="mt-4 btn-pers">
-          Register
+        <button type="submit" id="signup_button" class="button is-primary">
+          Create Account
         </button>
         <div
           class="alert alert-warning alert-dismissible fade show mt-5 d-none"
@@ -49,7 +48,7 @@
       };
     },
     methods: {
-      register(submitEvent) {
+      signup(submitEvent) {
         
         this.email = submitEvent.target.elements.email.value;
         this.password = submitEvent.target.elements.password.value;
@@ -60,7 +59,7 @@
           .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
-            console.log("Registration completed");
+            console.log("Signed up");
             this.$router.push("/Login");
           })
           .catch((error) => {
