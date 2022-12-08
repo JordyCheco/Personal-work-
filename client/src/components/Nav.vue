@@ -35,8 +35,8 @@
             <router-link class="navbar-item" to="/signup">
               Signup
             </router-link>
-            <router-link class="navbar-item" to="/community">
-              Community
+            <router-link class="navbar-item" to="/todo">
+              List
             </router-link>
           </div>
       

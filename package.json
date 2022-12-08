@@ -10,7 +10,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "4.12.1",
     "mongoose": "^5.13.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "vue-comment-grid": "^1.0.12"
   },
   "name": "wp-personal-work",
   "description": "",

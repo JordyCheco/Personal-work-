@@ -66,10 +66,10 @@ export default {
           const errorMessage = error.message;
           console.log(errorCode);
           console.log(errorMessage);
-          let alert_1 = document.querySelector("#alert_1");
-          alert_1.classList.remove("d-none");
-          alert_1.innerHTML = errorMessage;
-          console.log(alert_1);
+          let mistake = document.querySelector("mistake");
+          mistake.classList.remove("d-none");
+          mistake.innerHTML = errorMessage;
+          console.log(mistake);
         });
     },
     moveToSignup() {

@@ -3,8 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import WorkView from '../views/WorkoutView.vue'
 import LoginViewVue from '@/views/LoginView.vue'
 import SignupView from '@/views/SignupView.vue'
-import CommuntiyPostViewVue from '@/views/CommuntiyPostView.vue'
-
+import TodoList from '@/views/TodolistView.vue'
 
 
 const router = createRouter({
@@ -33,11 +32,10 @@ const router = createRouter({
       component: SignupView
     },
     {
-      path: '/community',
-      name: 'community',
-      component: CommuntiyPostViewVue
+      path: '/todo',
+      name: 'todo',
+      component: TodoList
     }
-   
   ]
 })
 
