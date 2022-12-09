@@ -11,7 +11,7 @@
   
       <div v-for="(todo, index) of todos" :key="todo.id">
         {{ todo.todo }}
-        <button class="button is-primary" @click="deleteTodo(index)">delete</button>
+        <button class="button is-primary" @click="deleteTodo(index)">delee</button>
       </div>
     </div>
 </article>
