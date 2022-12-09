@@ -18,8 +18,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "npm i -ws && npm run build -ws",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "workspaces": [
+    "client"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JordyCheco/Personal-work-.git"
