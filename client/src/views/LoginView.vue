@@ -1,4 +1,9 @@
 <template>
+ 
+ <article class="panel is-success">
+  <p class="panel-heading">
+    Welcome please login! 
+  </p>  
   <div class="container">
     <form @submit.prevent="login" class="box">
       <div class="input">
@@ -36,6 +41,7 @@
       </div>
     </form>
   </div>
+</article>
   
 </template>
 
@@ -53,17 +59,18 @@ export default {
     login(submitEvent) {
       this.email = submitEvent.target.elements.email.value;
       this.password = submitEvent.target.elements.password.value;
-
-      const auth = getAuth();
-      signInWithEmailAndPassword(auth, this.email, this.password)
+        // Onced logged in, user is redirected to the home page
+      const info = getAuth();
+      signInWithEmailAndPassword(info, this.email, this.password)
         .then(() => {
           this.$router.push("/");
 
 
         })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+        // this catches the error if user tries to login with an email that does not exist
+        .catch((invalid) => {
+          const errorCode = invaild.code;
+          const errorMessage = invalid.message;
           console.log(errorCode);
           console.log(errorMessage);
           let mistake = document.querySelector("mistake");
@@ -73,7 +80,7 @@ export default {
         });
     },
     moveToSignup() {
-      this.$router.push("/register");
+      this.$router.push("/signup");
     },
   },
 };
@@ -82,4 +89,3 @@ export default {
 
 
 </script>
-
