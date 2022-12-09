@@ -179,7 +179,7 @@ import Activity from '../components/Activity/Activity.vue'
       <div class="level-right">
         <div class="level-item">
           <label class="checkbox">
-            <input type="checkbox"> Press enter to submit
+            <input type="checkbox"> 
           </label>
         </div>
       </div>
