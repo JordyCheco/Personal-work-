@@ -1,30 +1,17 @@
 ### get all workouts from a user
-GET http://127.0.0.1:3003/api/v1/workouts/a
+GET http://127.0.0.1:3000/api/v1/workouts/a
 
 ### get one workout from a user
-GET http://127.0.0.1:3003/api/v1/workouts/a/1
+GET http://127.0.0.1:3000/api/v1/workouts/a/1
 
 ### get user by username
-GET http://127.0.0.1:3003/api/v1/users/d
+GET http://127.0.0.1:3000/api/v1/users/d
 
 ### get all users
-GET http://127.0.0.1:3003/api/v1/users
-
-### follow a user
-PATCH http://127.0.0.1:3003/api/v1/users/follow/v/b
-
-### unfollow a user
-PATCH http://127.0.0.1:3003/api/v1/users/unfollow/v/b
+GET http://127.0.0.1:3000/api/v1/users
 
 ### remove a workout from a user
-DELETE http://127.0.0.1:3003/api/v1/workouts/a/1
-
-
-### get list of users a user is following
-GET http://127.0.0.1:3003/api/v1/users/following/v
-
-### remove user
-DELETE http://127.0.0.1:3003/api/v1/users/c
+DELETE http://127.0.0.1:3000/api/v1/workouts/a/1
 
 ### create user
 POST http://127.0.0.1:3000/api/v1/users

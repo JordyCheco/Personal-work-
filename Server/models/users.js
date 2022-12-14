@@ -15,17 +15,17 @@ const createUser = async (user) => {
     const hash = await bcrypt.hash(user.password, salt)
     user.password = hash
     await db.insertOne({
-      username: user.username,
+      email: user.email,
       password: user.password,
       workouts: [],
       following: [],
     });
-    return getUser(user.username);
+    return getUser(user.email);
   };
 // gets the user's information
-const getUser = async (username) => {
+const getUser = async (email) => {
     const db = await collection();
-    const user = await db.findOne({username: username});
+    const user = await db.findOne({email: email});
     return user;
 }
 // gets all the users using the database
@@ -34,15 +34,10 @@ const getUsers = async () => {
     const users = await db.find({}).toArray();
     return users;
 }
-//deletes the user
-const deleteUser = async (username) => {
-    const db = await collection();
-    const user = await db.deleteOne({username: username});
-}
 //gets their login information
-const login = async (username, password) => {
+const login = async (email, password) => {
     const db = await collection();
-    const user = await db.findOne({username: username});
+    const user = await db.findOne({email: email});
     if (user) {
         const validPassword = await bcrypt.compare(password, user.password);
         if (validPassword) {
@@ -50,26 +45,8 @@ const login = async (username, password) => {
         }
     }
 }
-// gets the user's followers
-const getFollowers = async (username) => {
-    const db = await collection();
-    const user = await db.findOne({username: username});
-    return user.followers;
-}
-// allows the user to unfollow another user
-const unfollow = async (username, follower) => {
-    const db = await collection();
-    const user = await db.findOne({username: username});
-    const index = user.followers.indexOf(follower);
-    if (index > -1) {
-        user.followers.splice(index, 1);
-    }
-    await db
-        .updateOne(
-            {username: username},
-            {$set: {followers: user.followers}}
-        );
-}
+
+
 const seed = async () => {
     const db = await collection();
     await db.deleteMany({});
@@ -77,19 +54,16 @@ const seed = async () => {
         {
             username: 'user1',
             password: 'password1',
-            followers: ['user2', 'user3'],
             workouts: []
         },
         {
             username: 'user2',
             password: 'password2',
-            followers: ['user1'],
             workouts: []
         },
         {
             username: 'user3',
             password: 'password3',
-            followers: ['user1'],
             workouts: []
         }
     ]);
@@ -99,9 +73,6 @@ module.exports = {
     createUser,
     getUser,
     getUsers,
-    deleteUser,
     login,
-    getFollowers,
-    unfollow,
     seed
 }

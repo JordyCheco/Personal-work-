@@ -14,8 +14,8 @@ app
       .then((data) => res.status(200).send(data))
       .catch(next);
   })
-  .get("/:username", (req, res, next) => {
-    users.getUser(req.params.username)
+  .get("/:email", (req, res, next) => {
+    users.getUser(req.params.email)
       .then((data) => {
         if (data) {
           res.status(200).send(data);
@@ -23,37 +23,9 @@ app
           res.status(404).send("User not found");
         }
       })
-  })
-  .get("/following/:username", (req, res, next) => {
-    users.getFollowing(req.params.username)
-      .then((data) => {
-        if (data) {
-          res.status(200).send(data);
-        } else {
-          res.status(404).send("User not found");
-        }
-      })
-  })
-  .patch("/follow/:username/:fusername", (req, res, next) => {
-    users.follow(req.params.username, req.params.fusername)
-      .then((data) => {
-        res.status(200).send(req.params.username + " followed " + req.params.fusername);
-      });
-  })
-  .patch("/unfollow/:username/:fusername", (req, res, next) => {
-    users.unfollow(req.params.username, req.params.fusername)
-      .then((data) => {
-        res.status(200).send(req.params.username + " unfollowed " + req.params.fusername);
-      });
-  })
-  .delete("/:username", (req, res, next) => {
-    users.removeUser(req.params.username)
-      .then((data) => {
-        res.status(200).send("User " + req.params.username + " deleted");
-      });
   })
   .post("/login", (req, res, next) => {
-    users.login(req.body.username, req.body.password)
+    users.login(req.body.email, req.body.password)
       .then((data) => {
         if (data) {
           res.status(200).send(data);
