@@ -8,9 +8,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit"
   },
- 
   "dependencies": {
     "@vueuse/core": "^9.6.0",
+    "add": "^2.0.6",
     "autoprefixer": "^9",
     "axios": "^1.2.0",
     "body-parser": "^1.20.1",
@@ -24,7 +24,9 @@
     "uid": "^2.0.0",
     "vue": "^3.2.38",
     "vue-chartjs": "^4.1.2",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue-select": "^4.0.0-beta.6",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/node": "^16.11.56",

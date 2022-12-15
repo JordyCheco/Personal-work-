@@ -52,19 +52,17 @@ const seed = async () => {
     await db.deleteMany({});
     await db.insertMany([
         {
-            username: 'user1',
+            email: 'user1@gmail.com',
             password: 'password1',
-            workouts: []
         },
         {
-            username: 'user2',
+            email: 'user2@gmail.com',
             password: 'password2',
-            workouts: []
+
         },
         {
-            username: 'user3',
+            email: 'user3@gmail.com',
             password: 'password3',
-            workouts: []
         }
     ]);
 } 

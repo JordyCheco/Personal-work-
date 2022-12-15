@@ -1,8 +1,3 @@
-### get all workouts from a user
-GET http://127.0.0.1:3000/api/v1/workouts/a
-
-### get one workout from a user
-GET http://127.0.0.1:3000/api/v1/workouts/a/1
 
 ### get user by username
 GET http://127.0.0.1:3000/api/v1/users/d
@@ -30,21 +25,5 @@ Content-Type: application/json
     "username": "f",
     "password": "f"
 }
-
-### add workout
-POST http://127.0.0.1:3003/api/v1/workouts/a
-Content-Type: application/json
-
-{
-    "wid": 5,
-    "name": "not a test anymore >:)",
-    "weight": 30,
-    "reps": 10,
-    "date": "2020-01-01"
-}
-
-### remove a workout
-DELETE http://127.0.0.1:3000/api/v1/workouts/a/1
-
 ### seed database
 POST http://127.0.0.1:3000/api/v1/users/seed

@@ -1,0 +1,26 @@
+{
+    "workouts": [
+        
+    {"name": "chestpress"},
+    {"name": "Sit ups"},
+    {"name": "Squat"},
+    {"name": "Dead lift"},
+    {"name": "Incline Chest press"},
+    {"name": "Push-ups"},
+    {"name": "jumping jacks"},
+    {"name": "Bench press"},
+    {"name": "Bicep curls"},
+    {"name": "Tricep extensions"},
+    {"name": "Shoulder press"},
+    {"name": "Lateral raises'"},
+    {"name": "Lunges"},
+    {"name": "Calf raises"},
+    {"name": "Plank"},
+    {"name": "Crunches"},
+    {"name": "Leg raises"},
+    {"name": "Pull-ups"},
+    {"name": "Dips"},
+    {"name": "Bent over rows"}
+        
+    ]
+}
