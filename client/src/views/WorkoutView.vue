@@ -1,6 +1,7 @@
 <script setup lang="ts">
-    import { reactive } from 'vue';
-
+    import { api } from '@/stores/sessions';
+import { reactive } from 'vue';
+    import vSelect from 'vue-select';
     const items = [
         { name: 'Chest press', reps: 10 },
         { name: 'Sit ups' , reps: 10 },
@@ -33,13 +34,14 @@
     function addToCart(item: any) {
         cart.push({ ...item, sets: 1 });
     }
+    const options = ref:['workouts', 'reps']
 </script>
 
 <template>
     
   <div class="about box">
     <h1 class="title">Workouts</h1>
-
+    <v-select :options="options"></v-select>
     <ul>
       <li v-for="item in items" :key="item.name" @click="addToCart(item)">
         <h3>{{ item.name }}</h3>
